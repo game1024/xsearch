@@ -3,7 +3,7 @@ from openpyxl.styles import Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 # 合并单元格
-def merge_cells(excel_file, column_name, sheet_name=None, exclude_header=True):
+def merge_in_col(excel_file, column_name, sheet_name=None, exclude_header=True):
     wb = load_workbook(excel_file)
     if sheet_name:
         ws = wb[sheet_name]
@@ -35,8 +35,8 @@ def merge_cells(excel_file, column_name, sheet_name=None, exclude_header=True):
     wb.save(excel_file)
 
 # 设置单元格样式
-def style_cells(excel_file, column_name, font_name='黑体', font_size=10, font_color="000000", bg_color=None,
-                condition=lambda value:True, sheet_name=None, exclude_header=True):
+def style_in_col(excel_file, column_name, font_name='黑体', font_size=10, font_color="000000", bg_color=None,
+                 condition=lambda value:True, sheet_name=None, exclude_header=True):
     wb = load_workbook(excel_file)
     if sheet_name:
         ws = wb[sheet_name]
@@ -61,7 +61,7 @@ def style_cells(excel_file, column_name, font_name='黑体', font_size=10, font_
 
     wb.save(excel_file)
 
-def format_cells(excel_file, column_name, format="0.00", sheet_name=None, exclude_header=True):
+def format_in_col(excel_file, column_name, format="0.00", sheet_name=None, exclude_header=True):
     wb = load_workbook(excel_file)
     if sheet_name:
         ws = wb[sheet_name]
