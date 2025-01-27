@@ -1,5 +1,5 @@
 from openpyxl import load_workbook
-from openpyxl.styles import Font, PatternFill
+from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 
 # 合并单元格
@@ -86,8 +86,10 @@ def style_header(excel_file, font_name='黑体', font_size=14, sheet_name=None):
         ws = wb.active
 
     font = Font(name=font_name, size=font_size, bold=True)
+    alignment = Alignment(horizontal='center', vertical='center')
     for cell in ws[1]:
         cell.font = font
+        cell.alignment = alignment
 
     wb.save(excel_file)
 
