@@ -22,4 +22,3 @@ class TestApi:
         style_header(file, font_size=12)
         merge_in_col(file, "字段路径", "综搜-相似度")
         style_in_col(file, "数量", bg_color='FF0000', condition=lambda value: value >= 30)
-        format_in_col(file, "请求占比", "0.0%")
